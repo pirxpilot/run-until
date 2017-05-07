@@ -1,0 +1,29 @@
+{
+  "name": "run-until",
+  "version": "0.0.0",
+  "description": " Run a sequence of async functions until one of them returns something.",
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@code42day.com",
+    "url": "https://code42day.com"
+  },
+  "repository": "pirxpilot/run-until",
+  "license": "MIT",
+  "keywords": [
+    "run-until",
+    "async",
+    "until"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "^2.9.4",
+    "mocha": "^3.3.0"
+  },
+  "scripts": {
+    "test": "make check"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}
