@@ -1,9 +1,11 @@
-var assert = require('assert');
+const { describe, it } = require('node:test');
+const assert = require('node:assert/strict');
+
 var runUntil = require('../');
 
 describe('run-until', function () {
 
-  it('should run a single task', function (done) {
+  it('should run a single task', function (_, done) {
 
     function task(params, fn) {
       setTimeout(function() {
@@ -18,7 +20,7 @@ describe('run-until', function () {
   });
 
 
-  it('should runs all tasks until the first one', function (done) {
+  it('should runs all tasks until the first one', function (_, done) {
     var seq = '';
 
     function task(opts, params, fn) {
@@ -42,7 +44,7 @@ describe('run-until', function () {
     });
   });
 
-  it('should run all tasks if none returns any value', function (done) {
+  it('should run all tasks if none returns any value', function (_, done) {
     var seq = '';
 
     function task(s, params, fn) {
