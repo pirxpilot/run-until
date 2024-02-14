@@ -1,6 +1,6 @@
 {
   "name": "run-until",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": " Run a sequence of async functions until one of them returns something.",
   "author": {
     "name": "Damian Krzeminski",
