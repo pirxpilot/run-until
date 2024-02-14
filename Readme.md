@@ -1,6 +1,6 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
 
 # run-until
 
@@ -24,11 +24,11 @@ runUntil('Rainbow');
 
 MIT © [Damian Krzeminski](https://code42day.com)
 
-[npm-image]: https://img.shields.io/npm/v/run-until.svg
+[npm-image]: https://img.shields.io/npm/v/run-until
 [npm-url]: https://npmjs.org/package/run-until
 
-[travis-url]: https://travis-ci.org/pirxpilot/run-until
-[travis-image]: https://img.shields.io/travis/pirxpilot/run-until.svg
+[build-url]: https://github.com/pirxpilot/run-until/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/run-until/check.yaml?branch=main
 
-[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/run-until.svg
-[gemnasium-url]: https://gemnasium.com/pirxpilot/run-until
+[deps-image]: https://img.shields.io/librariesio/release/npm/run-until
+[deps-url]: https://libraries.io/npm/run-until
