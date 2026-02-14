@@ -15,10 +15,57 @@ $ npm install --save run-until
 ## Usage
 
 ```js
-var runUntil = require('run-until');
+import runUntil from 'run-until';
 
-runUntil('Rainbow');
+// Define async tasks that run until one returns a value
+const tasks = [
+  // Task 1: Try to fetch from primary server
+  (params, callback) => {
+    fetch(`${params.primaryUrl}/data`)
+      .then(res => res.json())
+      .then(data => callback(null, data)) // Return data to stop execution
+      .catch(() => callback()); // Continue to next task on error
+  },
+  
+  // Task 2: Try fallback server
+  (params, callback) => {
+    fetch(`${params.fallbackUrl}/data`)
+      .then(res => res.json())
+      .then(data => callback(null, data)) // Stop on success
+      .catch(() => callback()); // Continue if fails
+  },
+  
+  // Task 3: Use cached data as last resort
+  (params, callback) => {
+    callback(null, params.cache); // Always returns a value
+  }
+];
+
+// Run tasks with parameters
+runUntil(
+  tasks,
+  {
+    primaryUrl: 'https://api.example.com',
+    fallbackUrl: 'https://backup.example.com',
+    cache: { fallback: true }
+  },
+  (err, result) => {
+    if (err) {
+      console.error('Error:', err);
+    } else {
+      console.log('Data:', result);
+    }
+  }
+);
 ```
+
+**How it works:**
+
+- Runs tasks sequentially until one returns a value (via `callback(null, value)`)
+- Each task receives `params` and a callback function
+- Call `callback()` with no arguments or an error to continue to the next task
+- Call `callback(null, value)` to stop execution and return the value
+- If no task returns a value, the final callback is called with `undefined`
 
 ## License
 

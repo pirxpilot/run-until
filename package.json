@@ -7,22 +7,25 @@
     "email": "pirxpilot@code42day.com",
     "url": "https://code42day.com"
   },
-  "repository": "github:pirxpilot/run-until",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/run-until.git"
+  },
+  "type": "module",
+  "exports": "./lib/run-until.js",
   "license": "MIT",
   "keywords": [
     "run-until",
     "async",
     "until"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "@pirxpilot/jshint": "~3"
-  },
   "scripts": {
     "test": "make check"
   },
   "files": [
-    "index.js",
     "lib"
-  ]
+  ],
+  "dependencies": {
+    "@biomejs/biome": "^2.3.15"
+  }
 }
